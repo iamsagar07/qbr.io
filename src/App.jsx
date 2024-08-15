@@ -1,15 +1,15 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { useEffect, useState } from "react";
+
 import "./App.css";
-import Combine from "./components/common/Combine";
 import AppLayout from "./components/Layout/AppLayout";
 import ProgressOnPresentGoals from "./components/ProgressOnPresentGoals";
-import ChangeInPlans from "./components/ChangeInPlans,";
+import ChangeInPlans from "./components/ChangeInPlans";
 import PerformanceGraph from "./components/PerformanceGraph";
 import FutureGoals from "./components/FutureGoals";
 import TeamPerformance from "./components/TeamPerformance";
 import TasksCleared from "./components/TaskCleared";
 import EmployeeAttendance from "./components/EmployeeAttendance";
-import { useEffect, useState } from "react";
 
 function App() {
   //max-w-7xl mx-auto p-4
