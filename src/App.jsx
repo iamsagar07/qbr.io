@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 
 import "./App.css";
 import AppLayout from "./components/Layout/AppLayout";
-import ProgressOnPresentGoals from "./components/ProgressOnPresentGoals";
-import ChangeInPlans from "./components/ChangeInPlans";
-import PerformanceGraph from "./components/PerformanceGraph";
-import FutureGoals from "./components/FutureGoals";
-import TeamPerformance from "./components/TeamPerformance";
-import TasksCleared from "./components/TaskCleared";
-import EmployeeAttendance from "./components/EmployeeAttendance";
+import ProgressOnPresentGoals from "./components/all-pages/ProgressOnPresentGoals";
+import ChangeInPlans from "./components/all-pages/ChangeInPlans";
+import PerformanceGraph from "./components/all-pages/PerformanceGraph";
+import FutureGoals from "./components/all-pages/FutureGoals";
+import TeamPerformance from "./components/all-pages/TeamPerformance";
+import TasksCleared from "./components/all-pages/TaskCleared";
+import EmployeeAttendance from "./components/all-pages/EmployeeAttendance";
 
 function App() {
   //max-w-7xl mx-auto p-4
