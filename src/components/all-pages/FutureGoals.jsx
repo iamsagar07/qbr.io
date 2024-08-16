@@ -1,17 +1,25 @@
 import { useState } from 'react';
+import useNotification from '../Custom hooks/useNotification';
 
 const FutureGoals = () => {
   const [tasks, setTasks] = useState([
     { id: 1, description: 'Implement new marketing strategy', completed: false },
     { id: 2, description: 'Hire 2 new developers', completed: false },
-    { id: 3, description: 'Conduct customer satisfaction survey', completed: false },
+    { id: 3, description: 'Customer review survey', completed: false },
   ]);
   const [newTask, setNewTask] = useState('');
+  const {handleNotification, triggerNotifications} = useNotification();
+
 
   const handleAddTask = () => {
     if (newTask.trim() !== '') {
       setTasks([...tasks, { id: Date.now(), description: newTask, completed: false }]);
       setNewTask('');
+      triggerNotifications({
+        type: "success",
+        message: "Goal added succesfully",
+        duration: 2000,
+    });
     }
   };
 
@@ -56,6 +64,7 @@ const FutureGoals = () => {
           </button>
         </div>
       </section>
+      {handleNotification}
     </div>
   );
 };

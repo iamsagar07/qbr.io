@@ -5,11 +5,11 @@ const Navbar = () => {
     const { isDarkMode, toggleDarkMode } = useDarkMode();
 
     return (
-        <div className="w-full flex justify-center items-center">
+        <div className="w-11/12 lg:ml-32 md:ml-16 flex justify-center items-center ">
             <nav className=" w-full-800 border-gray-200 dark:bg-gray-900  ">
                 <div className="flex justify-center lg:gap-x-64 items-center mx-auto lg:ml-80 md:ml-64">
-                    <div className="text-sm lg:text-4xl md:text-3xl sm:text-lg kalam py-5 ml-2 lg:ml-24 sm:ml-16 dark:text-white w-auto animate-fade-in-down">
-                        QUARTERLY BUISNESS REVIEW
+                    <div className="text-2xl lg:text-5xl md:text-3xl sm:text-lg kalam py-4 ml-2 lg:ml-24 sm:ml-16 dark:text-white w-auto animate-fade-in-down shadows border-none outline-none">
+                    QBRInsights.com
                     </div>
                     <div>
                         <div className="lg:p-5 lg:-mt-2 ml-16 lg:ml-32 md:mr-5 ">

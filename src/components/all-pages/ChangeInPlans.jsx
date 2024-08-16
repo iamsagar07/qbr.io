@@ -1,16 +1,25 @@
 import  { useState } from 'react';
+import useNotification from '../Custom hooks/useNotification';
 
 const ChangeInPlans = () => {
   const [changes, setChanges] = useState([
-    { id: 1, description: 'Shifted focus to remote work tools', date: '2023-04-01' },
-    { id: 2, description: 'Delayed product launch by one quarter', date: '2023-05-15' },
+    { id: 1, description: 'Shifted focus to remote work', date: '2023-04-01' },
+    { id: 2, description: 'Delayed product launch by one month', date: '2023-05-15' },
   ]);
   const [newChange, setNewChange] = useState({ description: '', date: '' });
+  const {handleNotification, triggerNotifications} = useNotification();
+
 
   const handleAddChange = () => {
     if (newChange.description.trim() !== '' && newChange.date) {
       setChanges([...changes, { id: Date.now(), ...newChange }]);
       setNewChange({ description: '', date: '' });
+      triggerNotifications({
+        type: "info",
+        message: "Plan changed succesfully",
+        duration: 2000,
+    });
+      
     }
   };
 
@@ -51,6 +60,7 @@ const ChangeInPlans = () => {
         </button>
       </div>
     </section>
+    {handleNotification}
    </div>
   );
 };

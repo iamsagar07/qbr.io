@@ -2,7 +2,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 
 const PerformanceGraph = () => {
   const data = [
-    { name: 'Week 1', completed: 5, pending: 10 },
+    { name: 'Week 1', completed: 5, pending: 8 },
     { name: 'Week 2', completed: 8, pending: 7 },
     { name: 'Week 3', completed: 12, pending: 5 },
     { name: 'Week 4', completed: 15, pending: 3 },

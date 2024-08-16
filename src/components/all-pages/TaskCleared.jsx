@@ -1,12 +1,14 @@
 import { useState } from 'react';
+import useNotification from '../Custom hooks/useNotification';
 
 const TasksCleared = () => {
   const [clearedTasks, setClearedTasks] = useState([
     { id: 1, description: 'Completed Q1 financial report', date: '2023-03-31' },
     { id: 2, description: 'Launched website redesign', date: '2023-04-15' },
-    { id: 3, description: 'Onboarded 5 new clients', date: '2023-05-02' },
+    { id: 3, description: 'Meeting with our investors', date: '2023-05-02' },
   ]);
   const [newTask, setNewTask] = useState({ description: '', date: '' });
+  const {handleNotification, triggerNotifications} = useNotification();
 
   const handleAddTask = () => {
     if (newTask.description.trim() !== '' && newTask.date) {
@@ -17,6 +19,11 @@ const TasksCleared = () => {
 
   const removeTask = (id) => {
     setClearedTasks(clearedTasks.filter(task => task.id !== id));
+    triggerNotifications({
+      type: "warning",
+      message: "Task Cleared succesfully",
+      duration: 2000,
+  });
   };
 
   return (
@@ -63,6 +70,7 @@ const TasksCleared = () => {
           </button>
         </div>
       </section>
+      {handleNotification}
     </div>
   );
 };
