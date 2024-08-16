@@ -1,5 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useEffect, useState } from "react";
+import logo from "./components/assets/qbr-logo.png";
+
 
 import "./App.css";
 import AppLayout from "./components/Layout/AppLayout";
@@ -11,21 +13,24 @@ import TeamPerformance from "./components/all-pages/TeamPerformance";
 import TasksCleared from "./components/all-pages/TaskCleared";
 import EmployeeAttendance from "./components/all-pages/EmployeeAttendance";
 
+
 function App() {
   //max-w-7xl mx-auto p-4
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    setTimeout(() => setIsLoading(false), 1500)
-  })
+    setTimeout(() => setIsLoading(false), 1500);
+  });
 
   if (isLoading) {
     return (
-        <div className='flex space-x-2 justify-center items-center bg-white dark:bg-gray-900 h-screen dark:invert'>
-        <span className='sr-only'>Loading...</span>
-         <div className='h-8 w-8 bg-black dark:bg-white rounded-full animate-bounce [animation-delay:-0.3s]'></div>
-       <div className='h-8 w-8 bg-black rounded-full animate-bounce [animation-delay:-0.15s]'></div>
-       <div className='h-8 w-8 bg-black rounded-full animate-bounce'></div>
-   </div>
+      <div className="flex space-x-2 flex-col gap-36 justify-center items-center bg-white dark:bg-gray-900 h-screen dark:invert">
+        <img width={190} src={logo} alt="logo" className="-my-36" />
+        <div className="flex gap-2 items-center">
+          <div className="h-8 w-8 bg-black dark:bg-white rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+          <div className="h-8 w-8 bg-black rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+          <div className="h-8 w-8 bg-black rounded-full animate-bounce"></div>
+        </div>
+      </div>
     );
   }
 
