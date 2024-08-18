@@ -33,8 +33,8 @@ const Sidebar = () => {
         };
     }, [sidebarRef]);
 
-    const { isDarkMode} = useDarkMode();
-   
+    const { isDarkMode } = useDarkMode();
+
 
     return (
         <div>
@@ -209,6 +209,15 @@ const Sidebar = () => {
                 >
                     <div className="h-full px-3 py-28 bg-white dark:bg-gray-800">
                         <ul className="space-y-2 font-medium flex flex-col gap-8">
+                            <li className="absolute">
+                                <Link to={'/'}>
+                                    {
+                                        isDarkMode ? <img width={190} src={lightLogo} alt="logo" className="-my-36" /> : <img width={190} src={logo} alt="logo" className="-my-36" />
+
+                                    }
+
+                                </Link>
+                            </li>
                             <li>
                                 <Link
                                     onClick={() => handleToogle(0)}
